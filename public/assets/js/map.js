@@ -50,3 +50,5 @@ document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("chang
     marker.setLngLat(geocoder.mapMarker._lngLat);
     onDragEnd();
 });
+
+document.querySelector(".mapboxgl-ctrl-geocoder--input").placeholder = "Pesquisar";
