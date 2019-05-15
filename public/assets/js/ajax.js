@@ -39,7 +39,7 @@ function loadInfo(lon, lat) {
                 alert('local não encontrado')
             } else {
                 document.getElementById("cidade").innerHTML = weather.name ? weather.name : 'Localizacao sem nome';
-                document.getElementById("clima").innerHTML = weather.weather[0].description;
+                document.getElementById("clima").innerHTML = weather.weather[0].description.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
                 document.getElementById("temp").innerHTML = weather.main.temp + "°C";
                 document.getElementById("pokemon").innerHTML = pokemon.name;
                 document.getElementById("modalPokemon").innerHTML = pokemon.name;
