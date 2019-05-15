@@ -11,5 +11,5 @@ var server = app.listen(PORT, function () {
     var host = server.address().address
     var port = server.address().port
 
-    console.log('App listening at %s port %s', host, port)
+    console.log('App executando em %s na porta %s', host, port)
 })
