@@ -219,8 +219,8 @@ hr {
 }
 
 .pokeInfo1 {
-  margin-left: 1em;
-  margin-right: 1em;
+  margin-left: .25em;
+  margin-right: .25em;
 }
 
 .pokeInfo1 p {
@@ -232,8 +232,8 @@ hr {
 }
 
 .pokeInfo2 {
-  margin-left: 1em;
-  margin-right: 1em;
+  margin-left: .25em;
+  margin-right: .25em;
   flex: 1;
   display: flex;
   flex-direction: column;
