@@ -58,40 +58,58 @@
             </div>
             <div class="modal-body">
                 <div class="pokeImg">
-                  <img id="pokeImg" src="" alt="">
+                    <img id="pokeImg" src="" alt="">
                 </div>
                 <div class="pokeInfo1">
-                  <p>HP: <span id="hp"></span></p><hr>
-                  <p>Ataque: <span id="attack"></span></p><hr>
-                  <p>Defesa: <span id="defense"></span></p><hr>
-                  <p>Ataque Esp.: <span id="sattack"></span></p><hr>
-                  <p>Defesa Esp.: <span id="sdefense"></span></p><hr>
-                  <p>Velocidade: <span id="speed"></span></p>
+                    <p>HP: <span id="hp"></span></p>
+                    <hr>
+                    <p>Ataque: <span id="attack"></span></p>
+                    <hr>
+                    <p>Defesa: <span id="defense"></span></p>
+                    <hr>
+                    <p>Ataque Esp.: <span id="sattack"></span></p>
+                    <hr>
+                    <p>Defesa Esp.: <span id="sdefense"></span></p>
+                    <hr>
+                    <p>Velocidade: <span id="speed"></span></p>
                 </div>
                 <div class="pokeInfo2">
-                  <div id="imgstipo" class="type">
-                    <p>Tipos</p>
-                  </div>
-                  <hr style="width: 100%;">
-                  <div class="moves">
-                      <p>Habilidades</p>
-                      <div id="moves"></div>
-                  </div>
-                  <hr style="width: 100%;">
-                  <div class="body">
-                    <div class="altura">
-                      <p>altura</p>
-                      <span id="altura"></span>
+                    <hr style="width: 100%;" class="mobile-only">
+                    <div id="imgstipo" class="type">
+                        <p>Tipos</p>
                     </div>
-                    <div class="peso">
-                      <p>peso</p>
-                      <span id="peso"></span>
+                    <hr style="width: 100%;">
+                    <div class="moves">
+                        <p>Habilidades</p>
+                        <div id="moves"></div>
                     </div>
-                  </div>
+                    <hr style="width: 100%;">
+                    <div class="body">
+                        <div class="altura">
+                            <p>altura</p>
+                            <span id="altura"></span>
+                        </div>
+                        <div class="peso">
+                            <p>peso</p>
+                            <span id="peso"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="erroModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="close">&times;</div>
+                    <h1>ERRO</h1>
+                </div>
+                <div class="modal-body">
+                    <h2>Local nao encontrado!</h2>
+                </div>
+            </div>
+        </div>
 
     <script src="/assets/js/ajax.js"></script>
     <script src="/assets/js/map.js"></script>
@@ -99,7 +117,6 @@
 
     <script>
         loadUserLocation();
-        console.log(map);
     </script>
 </body>
 

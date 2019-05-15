@@ -10,6 +10,13 @@
   word-spacing: 3px
 }
 
+.mapboxgl-ctrl-geocoder--suggestion > * {
+    font-family: Arial;
+    font-size: 14px;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -82,7 +89,7 @@ hr {
 }
 
 #logo {
-    width: 100%;
+    width: 70%;
     contain: content
 }
 
@@ -167,7 +174,7 @@ hr {
     background-color: #003A70;
     margin: auto;
     padding: 0;
-    width: 80%;
+    width: 90%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -258,6 +265,23 @@ hr {
   flex-wrap: wrap;
 }
 
+.move {
+    padding: .5em;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    width: 50%;
+    background-image: url(./../img/bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #000;
+    border: 5px solid #003A70;
+}
+
+.mobile-only {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     .main .map {
         width: 100%;
@@ -269,5 +293,28 @@ hr {
         width: 100%;
         overflow: hidden;
         margin-left: 0;
+    }
+
+    .modal-body {
+        flex-direction: column;
+    }
+
+    .move {
+        width: 100%;
+    }
+
+    .pokeImg {
+        width: auto;
+        height: 40%;
+      }
+
+    .mobile-only {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .move {
+        font-size: .8em;
     }
 }
