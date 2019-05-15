@@ -96,6 +96,10 @@ hr {
     margin-right: 1em;
 }
 
+.box p {
+    margin: .5em;
+}
+
 .img-tipo {
     width: 100%;
     display: flex;
@@ -235,6 +239,7 @@ hr {
   text-align: center;
   display: block;
   text-transform: uppercase;
+  margin: .5em;
 }
 
 .pokeInfo2 span {
