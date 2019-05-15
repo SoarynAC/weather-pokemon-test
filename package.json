@@ -1,0 +1,16 @@
+{
+  "name": "api-poketemp",
+  "version": "1.0.0",
+  "description": "pokemon based on temperature",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "Murilo Conde",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "superagent": "^5.0.5"
+  }
+}

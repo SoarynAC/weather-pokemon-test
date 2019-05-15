@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'>
+    </script>
+    <link rel='stylesheet'
+        href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css'
+        type='text/css' />
+    <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js">
+    </script>
+    <title>Poketemp</title>
+</head>
+
+<body id="body">
+    <div id="overlay">
+        <i class="fas fa-spinner fa-pulse fa-3x" style="color: white"></i>
+    </div>
+
+
+    <div class="main">
+        <div class="map">
+            <div id='map'></div>
+        </div>
+        <div class="info" id="info">
+            <img id="logo" src="assets/img/logo.png">
+            <div class="box">
+                <p>Cidade: <span class="resp" id="cidade"></span></p>
+                <hr>
+                <p>Clima: <span id="clima"></span></p>
+                <hr>
+                <p>Temperatura: <span id="temp"></span></p>
+            </div>
+            <br>
+            <div class="box">
+                <p>Tipo de pokemon que pode ser encontrado</p>
+                <div class="img-tipo">
+                    <img id="imgtipo" src="assets/img/types/normal.png">
+                </div>
+
+                <p>Ex. de Pokemon: <span id="pokemon"></span></p>
+
+                <button id="pokeInfo">Mais informacoes sobre o Pokemon</button>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <div id="pokemonModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="close">&times;</div>
+                <h1 id="modalPokemon"></h1>
+            </div>
+            <div class="modal-body">
+                <div class="pokeImg">
+                  <img id="pokeImg" src="" alt="">
+                </div>
+                <div class="pokeInfo1">
+                  <p>HP: <span id="hp"></span></p><hr>
+                  <p>Ataque: <span id="attack"></span></p><hr>
+                  <p>Defesa: <span id="defense"></span></p><hr>
+                  <p>Ataque Esp.: <span id="sattack"></span></p><hr>
+                  <p>Defesa Esp.: <span id="sdefense"></span></p><hr>
+                  <p>Velocidade: <span id="speed"></span></p>
+                </div>
+                <div class="pokeInfo2">
+                  <div id="imgstipo" class="type">
+                    <p>Tipos</p>
+                  </div>
+                  <hr style="width: 100%;">
+                  <div class="moves">
+                      <p>Habilidades</p>
+                      <div id="moves"></div>
+                  </div>
+                  <hr style="width: 100%;">
+                  <div class="body">
+                    <div class="altura">
+                      <p>altura</p>
+                      <span id="altura"></span>
+                    </div>
+                    <div class="peso">
+                      <p>peso</p>
+                      <span id="peso"></span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/ajax.js"></script>
+    <script src="/assets/js/map.js"></script>
+    <script src="/assets/js/modal.js"></script>
+
+    <script>
+        loadUserLocation()
+    </script>
+</body>
+
+</html>
