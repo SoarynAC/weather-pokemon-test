@@ -46,9 +46,10 @@ function loadInfo(lon, lat) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
 
-        if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText);
+        
 
-            clearTimeout(timeout);
+        if (this.readyState == 4 && this.status == 200) {
 
             document.getElementById("imgstipo").innerHTML = "<p>Tipos</p>";
             document.getElementById("moves").innerHTML = "";
@@ -62,6 +63,7 @@ function loadInfo(lon, lat) {
             if (res.resWeather.status != 200) {
                 emptyResponse();
             } else {
+                addPokeToMap(pokemon, lon, lat);
                 document.getElementById("cidade").innerHTML = weather.name ? weather.name : 'Localizacao sem nome';
                 document.getElementById("clima").innerHTML = weather.weather[0].description.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
                 document.getElementById("temp").innerHTML = weather.main.temp + "°C";
@@ -102,6 +104,8 @@ function loadInfo(lon, lat) {
             document.getElementById('info').scrollIntoView({
                 behavior: 'smooth'
             })
+
+            clearTimeout(timeout);
         }
     };
     xhttp.open("GET", "/buscar?lon=" + lon + "&lat=" + lat, true);

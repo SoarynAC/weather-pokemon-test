@@ -12,6 +12,7 @@ var map = new mapboxgl.Map({
 
 var geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
+    language: 'pt-BR',
     mapboxgl: mapboxgl
 })
 
@@ -46,9 +47,7 @@ function onDragEnd() {
 
 marker.on('dragend', onDragEnd);
 
-document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("change", function (e) {
+document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("change", function () {
     marker.setLngLat(geocoder.mapMarker._lngLat);
     onDragEnd();
 });
-
-document.querySelector(".mapboxgl-ctrl-geocoder--input").placeholder = "Pesquisar";
