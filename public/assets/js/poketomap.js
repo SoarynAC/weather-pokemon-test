@@ -1,14 +1,47 @@
-function addPokeToMap(pokemon, lon, lat) {
-    pokeIcon = document.createElement('IMG');
-    pokeIcon.src = pokemon.sprites.front_default;
-    pokeIcon.style.width = '60px';
-    pokeIcon.style.height = '60px';
-    pokeIcon.style.objectFit = 'contain';
+pokemons = [];
 
-    new mapboxgl.Marker({
-            element: pokeIcon,
-            anchor: 'center'
+function addPokeToMap(pokemon, lon, lat) {
+
+    map.loadImage(pokemon.sprites.front_default, function (error, image) {
+        if (error) {
+            throw error;
+        }
+        
+        map.addImage(pokemon.name, image);
+
+        pokemons.push({
+            "type": "Feature",
+            "properties": {
+                "description": "<strong style='text-transform: uppercase'>" + pokemon.name + "</strong>",
+                "icon": pokemon.name
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [lon, lat]
+            }
         })
-        .setLngLat([lon, lat])
-        .addTo(map);
+
+        if (map.getLayer('pokemons')) {
+            map.removeLayer('pokemons');
+            map.removeSource('pokemons');
+        }
+
+        map.addLayer({
+            "id": "pokemons",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": pokemons
+                }
+            },
+            "layout": {
+                "icon-image": "{icon}",
+                "icon-allow-overlap": true,
+                "icon-size": 0.5
+            }
+        });
+    })
+
 }

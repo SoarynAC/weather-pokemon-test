@@ -51,3 +51,28 @@ document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("chang
     marker.setLngLat(geocoder.mapMarker._lngLat);
     onDragEnd();
 });
+
+var popup = new mapboxgl.Popup({
+    closeButton: false,
+    closeOnClick: false
+});
+
+map.on('mouseenter', 'pokemons', function (e) {
+    map.getCanvas().style.cursor = 'pointer';
+
+    var coordinates = e.features[0].geometry.coordinates.slice();
+    var description = e.features[0].properties.description;
+
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+
+    popup.setLngLat(coordinates)
+        .setHTML(description)
+        .addTo(map);
+});
+
+map.on('mouseleave', 'pokemons', function () {
+    map.getCanvas().style.cursor = '';
+    popup.remove();
+});
