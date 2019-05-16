@@ -46,9 +46,6 @@ function loadInfo(lon, lat) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
 
-        console.log(this.responseText);
-        
-
         if (this.readyState == 4 && this.status == 200) {
 
             document.getElementById("imgstipo").innerHTML = "<p>Tipos</p>";
