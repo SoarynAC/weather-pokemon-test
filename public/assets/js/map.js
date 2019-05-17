@@ -3,7 +3,7 @@ mapboxgl.accessToken =
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/soaryn/cjvsb2u8c18x11cpi4jfueoqo',
+    style: 'mapbox://styles/soaryn/cjvsbojfr19gn1cnzshpcyqi6',
     center: [0, 0],
     zoom: 0,
     attributionControl: false,
