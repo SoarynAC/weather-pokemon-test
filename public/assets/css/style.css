@@ -17,6 +17,14 @@
     word-spacing: normal;
 }
 
+.mapboxgl-marker:nth-child(3):not(.mapboxgl-user-location-dot) {
+    display: none !important;
+}
+
+.mapboxgl-marker:nth-child(4):not(.mapboxgl-user-location-dot) {
+    display: none !important;
+}
+
 body {
     margin: 0;
     padding: 0;

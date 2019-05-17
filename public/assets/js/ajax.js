@@ -61,7 +61,7 @@ function loadInfo(lon, lat) {
                 emptyResponse();
             } else {
                 addPokeToMap(pokemon, lon, lat);
-                document.getElementById("cidade").innerHTML = weather.name ? weather.name : 'Localizacao sem nome';
+                document.getElementById("cidade").innerHTML = weather.name ? weather.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "") : 'Localizacao sem nome';
                 document.getElementById("clima").innerHTML = weather.weather[0].description.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
                 document.getElementById("temp").innerHTML = weather.main.temp + "°C";
                 document.getElementById("pokemon").innerHTML = pokemon.name;
