@@ -16,14 +16,14 @@ var geocoder = new MapboxGeocoder({
     mapboxgl: mapboxgl
 })
 
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
 var geolocate = new mapboxgl.GeolocateControl({
     positionOptions: {
         enableHighAccuracy: true
     },
     trackUserLocation: true
 })
-
-map.addControl(geocoder);
 
 map.addControl(geolocate);
 
