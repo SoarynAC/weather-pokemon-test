@@ -14,7 +14,7 @@ var map = new mapboxgl.Map({
 
 var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
-  language: 'pt-BR',
+  language: 'en-US',
   mapboxgl: mapboxgl
 })
 

@@ -9,7 +9,7 @@ module.exports = async (lon, lat) => {
             appid: '29d7591100934bfe7603aad29eba1626'
         })
         .query({
-            lang: 'pt'
+            lang: 'en'
         })
         .query({
             units: 'metric'
