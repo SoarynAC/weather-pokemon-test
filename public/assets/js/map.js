@@ -76,3 +76,29 @@ map.on('mouseleave', 'pokemons', function () {
     map.getCanvas().style.cursor = '';
     popup.remove();
 });
+
+
+map.on('load', () => {
+    map.addSource("pokemons", {
+        "type": "geojson",
+        "data": {
+            "type": "FeatureCollection",
+            "features": []
+        }
+    });
+
+    map.addLayer({
+        "id": "pokemons",
+        "type": "symbol",
+        "source": "pokemons",
+        "layout": {
+            "icon-image": "{icon}",
+            "icon-allow-overlap": true,
+            "icon-size": 0.5,
+            "symbol-z-order": "viewport-y",
+            "icon-padding": 0
+        }
+    });
+
+    loadUserLocation();
+})

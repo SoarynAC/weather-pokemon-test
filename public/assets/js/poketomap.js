@@ -6,7 +6,7 @@ function addPokeToMap(pokemon, lon, lat) {
         if (error) {
             throw error;
         }
-        
+
         map.addImage(pokemon.name, image);
 
         pokemons.push({
@@ -19,29 +19,14 @@ function addPokeToMap(pokemon, lon, lat) {
                 "type": "Point",
                 "coordinates": [lon, lat]
             }
-        })
-
-        if (map.getLayer('pokemons')) {
-            map.removeLayer('pokemons');
-            map.removeSource('pokemons');
-        }
-
-        map.addLayer({
-            "id": "pokemons",
-            "type": "symbol",
-            "source": {
-                "type": "geojson",
-                "data": {
-                    "type": "FeatureCollection",
-                    "features": pokemons
-                }
-            },
-            "layout": {
-                "icon-image": "{icon}",
-                "icon-allow-overlap": true,
-                "icon-size": 0.5
-            }
         });
+
+        map.getSource("pokemons").setData({
+            "type": "FeatureCollection",
+            "features": pokemons
+        });
+
+
     })
 
 }
