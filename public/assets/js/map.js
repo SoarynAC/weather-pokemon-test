@@ -19,7 +19,7 @@ var geocoder = new MapboxGeocoder({
 })
 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-
+/*
 var geolocate = new mapboxgl.GeolocateControl({
   positionOptions: {
     enableHighAccuracy: true
@@ -27,7 +27,7 @@ var geolocate = new mapboxgl.GeolocateControl({
   trackUserLocation: true
 })
 
-map.addControl(geolocate);
+map.addControl(geolocate);*/
 
 var marker = new mapboxgl.Marker({
     draggable: true
