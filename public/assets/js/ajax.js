@@ -65,7 +65,7 @@ function loadPoke(id) {
     img.src = "/assets/img/types/" + element.type.name + ".png";
     document.getElementById("imgstipo2").appendChild(img);
   })
-
+  document.body.style.overflow = 'hidden';
   document.getElementById("pokemonModal2").style.display = 'flex';
 }
 
@@ -93,11 +93,10 @@ function loadInfo(lon, lat) {
       type = JSON.parse(res.resType.text);
       pokemon = JSON.parse(res.resPokemon.text);
 
-      pokemonList.push(pokemon);
-
       if (res.resWeather.status != 200) {
         emptyResponse();
       } else {
+        pokemonList.push(pokemon);
         addPokeToMap(pokemon, lon, lat);
         document.getElementById("cidade").innerHTML = weather.name ? weather.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "") : 'Localizacao sem nome';
         document.getElementById("clima").innerHTML = weather.weather[0].description.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
@@ -131,14 +130,15 @@ function loadInfo(lon, lat) {
           img.src = "/assets/img/types/" + element.type.name + ".png";
           document.getElementById("imgstipo").appendChild(img);
         })
+
+        document.body.style.overflow = 'auto';
+        
+        document.getElementById('info').scrollIntoView({
+          behavior: 'smooth'
+        })
       }
 
-      document.body.style.overflow = 'auto';
       document.getElementById('overlay').style.display = 'none';
-
-      document.getElementById('info').scrollIntoView({
-        behavior: 'smooth'
-      })
 
       clearTimeout(timeout);
     }
