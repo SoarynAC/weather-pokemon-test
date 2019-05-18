@@ -1,352 +1,352 @@
 @font-face {
-    font-family: pixel;
-    src: url(./../font/pokemon_pixel_font.ttf);
+  font-family: pixel;
+  src: url(./../font/pokemon_pixel_font.ttf);
 }
 
 * {
-    font-family: pixel;
-    font-size: 25px;
-    letter-spacing: 1px;
-    word-spacing: 3px
+  font-family: pixel;
+  font-size: 25px;
+  letter-spacing: 1px;
+  word-spacing: 3px
 }
 
 .mapboxgl-ctrl-geocoder--suggestion>* {
-    font-family: Arial;
-    font-size: 14px;
-    letter-spacing: normal;
-    word-spacing: normal;
+  font-family: Arial;
+  font-size: 14px;
+  letter-spacing: normal;
+  word-spacing: normal;
 }
 
 .mapboxgl-marker:nth-child(3):not(.mapboxgl-user-location-dot) {
-    display: none !important;
+  display: none !important;
 }
 
 .mapboxgl-marker:nth-child(4):not(.mapboxgl-user-location-dot) {
-    display: none !important;
+  display: none !important;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #3D7DCA;
+  margin: 0;
+  padding: 0;
+  background-color: #3D7DCA;
 }
 
 span {
-    text-transform: capitalize;
-    text-align: right;
-    width: 100%;
-    margin-left: 2em;
+  text-transform: capitalize;
+  text-align: right;
+  width: 100%;
+  margin-left: 2em;
 }
 
 p {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 img {
-    margin: auto;
+  margin: auto;
 }
 
 hr {
-    border-color: #FFCB05
+  border-color: #FFCB05
 }
 
 #pokeInfo {
-    width: 100%;
-    text-align: center;
-    background-color: #FFCB05;
-    padding: 0.5em;
-    cursor: pointer;
-    border: 2px solid #FFCB05;
-    border-radius: 5px;
-    text-transform: uppercase;
-    outline: none;
-    margin-bottom: 1em;
+  width: 100%;
+  text-align: center;
+  background-color: #FFCB05;
+  padding: 0.5em;
+  cursor: pointer;
+  border: 2px solid #FFCB05;
+  border-radius: 5px;
+  text-transform: uppercase;
+  outline: none;
+  margin-bottom: 1em;
 }
 
 #pokeInfo:hover {
-    border: 2px solid #000;
+  border: 2px solid #000;
 }
 
 .main {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .main .map {
-    width: 50%;
-    height: 100vh;
-    box-sizing: border-box;
-    position: fixed;
+  width: 50%;
+  height: 100vh;
+  box-sizing: border-box;
+  position: fixed;
 }
 
 .main .info {
-    margin-left: 50%;
-    width: 50%;
-    min-height: 100vh;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #3D7DCA;
-    overflow: auto;
+  margin-left: 50%;
+  width: 50%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #3D7DCA;
+  overflow: auto;
 }
 
 #logo {
-    height: 25vh;
+  height: 25vh;
 }
 
 .box {
-    background-color: #003A70;
-    padding: 0em 1em 0em 1em;
-    color: #FFCB05;
-    text-shadow: 0 0 2px #000;
-    border-radius: 5px;
-    margin-left: 1em;
-    margin-right: 1em;
+  background-color: #003A70;
+  padding: 0em 1em 0em 1em;
+  color: #FFCB05;
+  text-shadow: 0 0 2px #000;
+  border-radius: 5px;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .box p {
-    margin: .5em;
+  margin: .5em;
 }
 
 .img-tipo {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #map {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .mapboxgl-marker:nth-child(2) {
-    z-index: 2;
+  z-index: 2;
 }
 
 .mapboxgl-ctrl-logo {
-    display: none !important
+  display: none !important
 }
 
 #overlay {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100000;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 9999999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    box-sizing: border-box;
+  display: none;
+  position: fixed;
+  z-index: 9999999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
 }
 
 .modal-header {
-    padding: 2px 16px;
-    background-color: #3D7DCA;
-    color: #FFCB05;
+  padding: 2px 16px;
+  background-color: #3D7DCA;
+  color: #FFCB05;
 }
 
 .modal-header h1 {
-    font-size: 2em;
-    margin: 10px;
+  font-size: 2em;
+  margin: 10px;
 }
 
 .modal-content {
-    background-color: #003A70;
-    margin: auto;
-    padding: 0;
-    width: 90%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #003A70;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .close {
-    color: #FFCB05;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    padding: .5em;
+  color: #FFCB05;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding: .5em;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
-    cursor: pointer;
+  color: #000;
+  cursor: pointer;
 }
 
 .modal-body {
-    padding: 1em;
-    display: flex;
-    color: #FFCB05;
+  padding: 1em;
+  display: flex;
+  color: #FFCB05;
 }
 
-#modalPokemon {
-    text-transform: uppercase;
+#modalPokemon, #modalPokemon2 {
+  text-transform: uppercase;
 }
 
 .pokeImg {
-    width: 30%;
-    height: auto;
+  width: 30%;
+  height: auto;
 }
 
-#pokeImg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    image-rendering: optimizeSpeed;
-    image-rendering: pixelated;
+#pokeImg, #pokeImg2 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: optimizeSpeed;
+  image-rendering: pixelated;
 }
 
-#imgstipo img {
-    margin: 5px;
+#imgstipo img, #imgstipo2 img {
+  margin: 5px;
 }
 
 .pokeInfo1 {
-    margin-left: .25em;
-    margin-right: .25em;
+  margin-left: .25em;
+  margin-right: .25em;
 }
 
 .pokeInfo1 p {
-    margin: .1em;
+  margin: .1em;
 }
 
 .pokeInfo1 p span {
-    margin-left: 2.5em;
+  margin-left: 2.5em;
 }
 
 .pokeInfo2 {
-    margin-left: .25em;
-    margin-right: .25em;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  margin-left: .25em;
+  margin-right: .25em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .pokeInfo2 p {
-    text-align: center;
-    display: block;
-    text-transform: uppercase;
-    margin: .5em;
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  margin: .5em;
 }
 
 .pokeInfo2 span {
-    margin: 0;
-    font-size: 1.5em;
+  margin: 0;
+  font-size: 1.5em;
 }
 
 .pokeInfo2 .body {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
-#moves {
-    display: flex;
-    flex-wrap: wrap;
+#moves, #moves2 {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .move {
-    padding: .5em;
-    box-sizing: border-box;
-    text-transform: uppercase;
-    width: 50%;
-    background-image: url(./../img/bg.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    color: #000;
-    border: 5px solid #003A70;
+  padding: .5em;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  width: 50%;
+  background-image: url(./../img/bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #000;
+  border: 5px solid #003A70;
 }
 
 .geocoder {
-    position: absolute;
-    z-index: 3;
-    margin-left: 15%;
-    margin-top: 10px;
-    width: 70%;
+  position: absolute;
+  z-index: 3;
+  margin-left: 15%;
+  margin-top: 10px;
+  width: 70%;
 }
 
 .mapboxgl-ctrl-geocoder {
-    min-width: 100% !important;
+  min-width: 100% !important;
 }
 
-.mapboxgl-ctrl-group > button {
-    width: 36px !important;
-    height: 36px !important;
+.mapboxgl-ctrl-group>button {
+  width: 36px !important;
+  height: 36px !important;
 }
 
 .mobile-only {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
-    .main .map {
-        width: 100%;
-        height: 75vh;
-        position: relative;
-    }
+  .main .map {
+    width: 100%;
+    height: 75vh;
+    position: relative;
+  }
 
-    .main .info {
-        width: 100%;
-        overflow: hidden;
-        margin-left: 0;
-    }
+  .main .info {
+    width: 100%;
+    overflow: hidden;
+    margin-left: 0;
+  }
 
-    .modal-body {
-        flex-direction: column;
-    }
+  .modal-body {
+    flex-direction: column;
+  }
 
-    .move {
-        width: 100%;
-    }
+  .move {
+    width: 100%;
+  }
 
-    .pokeImg {
-        width: auto;
-        height: 40%;
-    }
+  .pokeImg {
+    width: auto;
+    height: 40%;
+  }
 
-    .mobile-only {
-        display: block;
-    }
+  .mobile-only {
+    display: block;
+  }
 
-    .geocoder {
-        margin-left: 5%;
-        width: 75%;
-    }
+  .geocoder {
+    margin-left: 5%;
+    width: 75%;
+  }
 
-    .mapboxgl-ctrl-group > button {
-        width: 50px !important;
-        height: 50px !important;
-    }
+  .mapboxgl-ctrl-group>button {
+    width: 50px !important;
+    height: 50px !important;
+  }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
-    .move {
-        font-size: .8em;
-    }
+  .move {
+    font-size: .8em;
+  }
 }
