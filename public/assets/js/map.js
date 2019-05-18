@@ -104,7 +104,6 @@ map.on('load', () => {
       "icon-image": "{icon}",
       "icon-allow-overlap": true,
       "icon-size": 0.5,
-      "symbol-z-order": "viewport-y",
       "icon-padding": 0,
       "icon-ignore-placement": true
     }
