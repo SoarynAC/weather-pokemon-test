@@ -36,7 +36,7 @@ function emptyResponse() {
 }
 
 function loadPoke(id) {
-  document.getElementById("imgstipo2").innerHTML = "<p>Tipos</p>";
+  document.getElementById("imgstipo2").innerHTML = "<p>Types</p>";
   document.getElementById("moves2").innerHTML = "";
   document.getElementById("pokeImg2").src = pokemonList[id].sprites.front_default;
   document.getElementById("hp2").innerHTML = pokemonList[id].stats[5].base_stat;
@@ -84,7 +84,7 @@ function loadInfo(lon, lat) {
 
     if (this.readyState == 4 && this.status == 200) {
 
-      document.getElementById("imgstipo").innerHTML = "<p>Tipos</p>";
+      document.getElementById("imgstipo").innerHTML = "<p>Types</p>";
       document.getElementById("moves").innerHTML = "";
 
       res = JSON.parse(this.responseText);
