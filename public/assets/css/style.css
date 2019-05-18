@@ -295,11 +295,6 @@ hr {
   min-width: 100% !important;
 }
 
-.mapboxgl-ctrl-group>button {
-  width: 36px !important;
-  height: 36px !important;
-}
-
 .mobile-only {
   display: none;
 }
@@ -339,14 +334,10 @@ hr {
   }
 
   .geocoder {
-    margin-left: 5%;
-    width: 75%;
+    margin-left: 10%;
+    width: 80%;
   }
 
-  .mapboxgl-ctrl-group>button {
-    width: 50px !important;
-    height: 50px !important;
-  }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
