@@ -60,7 +60,8 @@ document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("chang
 
 var popup = new mapboxgl.Popup({
   closeButton: false,
-  closeOnClick: false
+  closeOnClick: false,
+  className: "popup"
 });
 
 map.on('mouseenter', 'pokemons', function(e) {
