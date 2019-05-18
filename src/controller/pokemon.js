@@ -2,7 +2,7 @@ var request = require('superagent')
 
 module.exports = async function (list) {
 
-    num = Math.floor(Math.random() * (list.body.pokemon.length/2))
+    num = Math.floor(Math.random() * list.body.pokemon.length)
 
     pokemon = await request.get(list.body.pokemon[num].pokemon.url)
         .then(function (res) {
