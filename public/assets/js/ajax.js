@@ -98,7 +98,7 @@ function loadInfo(lon, lat) {
       } else {
         pokemonList.push(pokemon);
         addPokeToMap(pokemon, lon, lat);
-        document.getElementById("cidade").innerHTML = weather.name ? weather.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "") : 'Localizacao sem nome';
+        document.getElementById("cidade").innerHTML = weather.name ? weather.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "") : 'Unknown';
         document.getElementById("clima").innerHTML = weather.weather[0].description.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
         document.getElementById("temp").innerHTML = weather.main.temp + "°C";
         document.getElementById("pokemon").innerHTML = pokemon.name;
@@ -132,7 +132,7 @@ function loadInfo(lon, lat) {
         })
 
         document.body.style.overflow = 'auto';
-        
+
         document.getElementById('info').scrollIntoView({
           behavior: 'smooth'
         })
