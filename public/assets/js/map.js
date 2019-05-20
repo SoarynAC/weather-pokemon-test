@@ -19,6 +19,7 @@ var geocoder = new MapboxGeocoder({
 })
 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
 /*
 var geolocate = new mapboxgl.GeolocateControl({
   positionOptions: {
@@ -53,7 +54,7 @@ function onDragEnd() {
 
 marker.on('dragend', onDragEnd);
 
-document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("change", function() {
+document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("change", function () {
   marker.setLngLat(geocoder.mapMarker._lngLat);
   onDragEnd();
 });
@@ -64,7 +65,7 @@ var popup = new mapboxgl.Popup({
   className: "popup"
 });
 
-map.on('mouseenter', 'pokemons', function(e) {
+map.on('mouseenter', 'pokemons', function (e) {
   onPokemon = true;
   map.getCanvas().style.cursor = 'pointer';
 
@@ -80,7 +81,7 @@ map.on('mouseenter', 'pokemons', function(e) {
     .addTo(map);
 });
 
-map.on('mouseleave', 'pokemons', function() {
+map.on('mouseleave', 'pokemons', function () {
   onPokemon = false;
   map.getCanvas().style.cursor = '';
   popup.remove();
