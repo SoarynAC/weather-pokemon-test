@@ -54,9 +54,11 @@ function onDragEnd() {
 
 marker.on('dragend', onDragEnd);
 
-document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("change", function () {
+document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("change", function (e) {
   marker.setLngLat(geocoder.mapMarker._lngLat);
-  onDragEnd();
+  if (!e.isTrusted) {
+    onDragEnd();
+  }
 });
 
 var popup = new mapboxgl.Popup({
