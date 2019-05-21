@@ -96,12 +96,12 @@ function loadInfo(lon, lat) {
         pokemonList.push(pokemon);
         addPokeToMap(pokemon, lon, lat);
         
-        date = moment.unix(weather.dt).tz(tzlookup(lat, lon));
+        date = moment().tz(tzlookup(lat, lon));
         dateString = date.format("HH:mm");
 
-        document.getElementById("cidade").innerHTML = weather.name ? weather.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "") : 'Unknown';
+        document.getElementById("cidade").innerHTML = (weather.name ? weather.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "") : 'Unknown') + " (" + dateString + ")";
         document.getElementById("clima").innerHTML = weather.weather[0].description.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-        document.getElementById("temp").innerHTML = weather.main.temp + "°C (" + dateString + ")";
+        document.getElementById("temp").innerHTML = weather.main.temp + "°C";
         document.getElementById("pokemon").innerHTML = pokemon.name;
         document.getElementById("imgtipo").src = "/assets/img/types/" + type.name + ".png";
         
