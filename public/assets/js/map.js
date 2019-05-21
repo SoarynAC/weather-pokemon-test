@@ -5,7 +5,7 @@ onPokemon = false;
 
 var map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/soaryn/cjvsd5p9n1avo1clwwvjaovsz',
+  style: 'mapbox://styles/soaryn/cjvx6iivd5siy1cqz04jcqeds',
   center: [0, 0],
   zoom: 0,
   attributionControl: false,
