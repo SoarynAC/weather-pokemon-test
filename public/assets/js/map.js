@@ -15,7 +15,19 @@ var map = new mapboxgl.Map({
 var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
   language: 'en-US',
-  mapboxgl: mapboxgl
+  mapboxgl: mapboxgl,
+  zoom: 10,
+  types: "district, place, locality, country",
+  clearAndBlurOnEsc: true,
+  flyTo: {
+    bearing: 1,
+    speed: 10, 
+    curve: 10,
+    easing: function (t) {
+      return t;
+    }
+  },
+  limit: 20
 })
 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
@@ -54,12 +66,13 @@ function onDragEnd() {
 
 marker.on('dragend', onDragEnd);
 
-document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("change", function (e) {
+geocoder.on('result', function () {
   marker.setLngLat(geocoder.mapMarker._lngLat);
-  if (!e.isTrusted) {
-    onDragEnd();
-  }
-});
+  geocoder.clear();
+  setTimeout(() => {
+    onDragEnd()
+  }, 1000);
+})
 
 var popup = new mapboxgl.Popup({
   closeButton: false,
@@ -67,7 +80,7 @@ var popup = new mapboxgl.Popup({
   className: "popup"
 });
 
-map.on('mouseenter', 'pokemons', function (e) {
+map.on('mousemove', 'pokemons', function (e) {
   onPokemon = true;
   map.getCanvas().style.cursor = 'pointer';
 
@@ -91,6 +104,9 @@ map.on('mouseleave', 'pokemons', function () {
 
 
 map.on('load', () => {
+
+  document.querySelector(".mapboxgl-ctrl-geocoder--input").focus();
+
   map.addSource("pokemons", {
     "type": "geojson",
     "data": {
