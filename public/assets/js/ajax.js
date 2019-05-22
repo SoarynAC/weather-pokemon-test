@@ -22,6 +22,16 @@ function emptyResponse() {
   document.getElementById("temp").innerHTML = '-';
   document.getElementById("pokemon").innerHTML = '-';
   document.getElementById("imgtipo").src = "/assets/img/bg.png";
+  document.getElementById("pokeImg").src = "";
+  document.getElementById("hp").innerHTML = '-';
+  document.getElementById("attack").innerHTML = '-';
+  document.getElementById("defense").innerHTML = '-';
+  document.getElementById("sattack").innerHTML = '-';
+  document.getElementById("sdefense").innerHTML = '-';
+  document.getElementById("speed").innerHTML = '-';
+  document.getElementById("altura").innerHTML = '-';
+  document.getElementById("peso").innerHTML = '-';
+  document.getElementById("modalPokemon").innerHTML = '-';
   document.getElementById("erroModal").style.display = 'flex';
 }
 
@@ -65,7 +75,6 @@ function loadInfo(lon, lat) {
   document.getElementById('overlay').style.display = 'flex';
   timeout = setTimeout(() => {
     document.getElementById('overlay').style.display = 'none';
-    document.getElementById('errorText').innerHTML = 'Connection timed out.';
     emptyResponse();
     xhttp.abort();
   }, 20000);;
@@ -82,12 +91,11 @@ function loadInfo(lon, lat) {
       pokemon = JSON.parse(res.resPokemon.text);
 
       if (res.resWeather.status != 200) {
-        document.getElementById('errorText').innerHTML = 'Location not found.';
         emptyResponse();
       } else {
         pokemonList.push(pokemon);
         addPokeToMap(pokemon, lon, lat);
-
+        
         date = moment().tz(tzlookup(lat, lon));
         dateString = date.format("HH:mm");
 
@@ -96,7 +104,7 @@ function loadInfo(lon, lat) {
         document.getElementById("temp").innerHTML = weather.main.temp + "°C";
         document.getElementById("pokemon").innerHTML = pokemon.name;
         document.getElementById("imgtipo").src = "/assets/img/types/" + type.name + ".png";
-
+        
         document.body.style.overflow = 'auto';
 
         document.getElementById('info').scrollIntoView({

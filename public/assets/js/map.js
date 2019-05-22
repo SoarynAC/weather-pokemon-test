@@ -70,7 +70,8 @@ geocoder.on('result', function () {
   marker.setLngLat(geocoder.mapMarker._lngLat);
   geocoder.clear();
   setTimeout(() => {
-    onDragEnd()
+    document.querySelector(".mapboxgl-ctrl-geocoder--input").blur();
+    onDragEnd();
   }, 1000);
 })
 
