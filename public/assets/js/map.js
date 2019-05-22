@@ -16,7 +16,7 @@ var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
   language: 'en-US',
   mapboxgl: mapboxgl,
-  zoom: 10,
+  zoom: 12,
   types: "district, place, locality, country",
   clearAndBlurOnEsc: true,
   flyTo: {
