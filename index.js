@@ -1,7 +1,13 @@
 var express = require('express')
 var app = express()
 
+var compression = require('compression')
+
 const PORT = process.env.PORT || 5000
+
+app.use(compression({
+    level: 9
+}))
 
 require('./src/routes')(app)
 
