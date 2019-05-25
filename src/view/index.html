@@ -120,13 +120,6 @@
         navigator.serviceWorker.register('/sw.js')
       })
     }
-
-    let deferredPrompt;
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault()
-      e.prompt()
-    })
   </script>
 
   <script src="/assets/js/tz.js"></script>
