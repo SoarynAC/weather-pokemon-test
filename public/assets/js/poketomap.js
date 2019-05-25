@@ -3,7 +3,7 @@ pokeId = 0;
 
 function addPokeToMap(pokemon, lon, lat) {
 
-  map.loadImage(pokemon.sprites.front_default, function(error, image) {
+  map.loadImage(pokemon.sprite, function(error, image) {
     if (error) {
       pokemons.push({
         "type": "Feature",

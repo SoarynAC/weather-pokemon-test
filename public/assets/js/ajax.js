@@ -38,7 +38,7 @@ function emptyResponse() {
 function loadPoke(id) {
   document.getElementById("imgstipo").innerHTML = "<p>Types</p>";
   document.getElementById("moves").innerHTML = "";
-  document.getElementById("pokeImg").src = pokemonList[id].sprites.front_default;
+  document.getElementById("pokeImg").src = pokemonList[id].sprite;
   document.getElementById("hp").innerHTML = pokemonList[id].stats[5].base_stat;
   document.getElementById("attack").innerHTML = pokemonList[id].stats[4].base_stat;
   document.getElementById("defense").innerHTML = pokemonList[id].stats[3].base_stat;
@@ -87,11 +87,11 @@ function loadInfo(lon, lat) {
 
       res = JSON.parse(this.responseText);
 
-      weather = JSON.parse(res.resWeather.text);
-      type = JSON.parse(res.resType.text);
-      pokemon = JSON.parse(res.resPokemon.text);
+      weather = res.resWeather;
+      type = res.resType;
+      pokemon = res.resPokemon;
 
-      if (res.resWeather.status != 200) {
+      if (res.resWeather.cod != 200) {
         document.getElementById("errorText").innerHTML = 'Location not found';
         emptyResponse();
       } else {
@@ -105,7 +105,7 @@ function loadInfo(lon, lat) {
         document.getElementById("clima").innerHTML = weather.weather[0].description.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
         document.getElementById("temp").innerHTML = weather.main.temp + "°C";
         document.getElementById("pokemon").innerHTML = pokemon.name;
-        document.getElementById("imgtipo").src = "/assets/img/types/" + type.name + ".png";
+        document.getElementById("imgtipo").src = "/assets/img/types/" + type + ".png";
         
         document.body.style.overflow = 'auto';
 

@@ -24,20 +24,25 @@ module.exports = async (lon, lat) => {
 
             type = getType(response.body.main.temp, response.body.weather[0].main)
 
-            return response
+            return response.body
         })
         .catch(function (err) {
             type = 'normal'
             console.log(err)
-            return err.response
+            return err.response.body
         })
 
     resType = await request.get('https://pokeapi.co/api/v2/type/' + type)
+        .then(function (response) {
+            return response.body
+        })
         .catch(function (err) {
             console.log(err)
-            return err.response
+            return err.response.body
         })
     resPokemon = await getPokemon(resType)
+
+    resType = resType.name
 
     return {
         resWeather,
