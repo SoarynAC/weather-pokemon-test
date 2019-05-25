@@ -1,0 +1,37 @@
+const CACHE_NAME = 'poke-cache-v1'
+var urlsToCache = [
+    '/',
+    '/assets/css/style.css',
+    '/assets/js/ajax.js',
+    '/assets/js/map.js',
+    '/assets/js/modal.js',
+    '/assets/js/moment-timezone-10.min.js',
+    '/assets/js/moment.min.js',
+    '/assets/js/poketomap.js',
+    '/assets/js/tz.js',
+    '/assets/font/pokemon_pixel_font.ttf',
+    '/assets/img/',
+    '/assets/img/types/'
+]
+
+self.addEventListener('install', function (event) {
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+        .then(function (cache) {
+            console.log('Opened cache')
+            return cache.addAll(urlsToCache)
+        })
+    )
+})
+
+self.addEventListener('fetch', function (event) {
+    event.respondWith(
+        caches.match(event.request)
+        .then(function (response) {
+            if (response) {
+                return response
+            }
+            return fetch(event.request)
+        })
+    )
+})

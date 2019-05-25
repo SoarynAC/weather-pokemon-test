@@ -112,6 +112,14 @@
     </div>
   </div>
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+      })
+    }
+  </script>
+
   <script src="/assets/js/tz.js"></script>
   <script src="/assets/js/moment.min.js"></script>
   <script src="/assets/js/moment-timezone-10.min.js"></script>
