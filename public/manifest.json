@@ -1,0 +1,20 @@
+{
+    "short_name": "PokeWeather",
+    "name": "Pokémon Weather Map",
+    "icons": [
+      {
+        "src": "/assets/img/icon2.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "/assets/img/icon1.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#003A70",
+    "display": "standalone",
+    "theme_color": "#3D7DCA"
+  }
