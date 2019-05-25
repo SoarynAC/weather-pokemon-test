@@ -11,7 +11,9 @@
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
   <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'>
   </script>
-  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' type='text/css' />
+  <link rel='stylesheet'
+    href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css'
+    type='text/css' />
   <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js">
   </script>
   <title>Pokémon Weather Map</title>
@@ -114,10 +116,17 @@
 
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
+      window.addEventListener('load', function () {
         navigator.serviceWorker.register('/sw.js')
       })
     }
+
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault()
+      e.prompt()
+    })
   </script>
 
   <script src="/assets/js/tz.js"></script>
