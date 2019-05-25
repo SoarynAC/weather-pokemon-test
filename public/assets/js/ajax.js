@@ -75,6 +75,7 @@ function loadInfo(lon, lat) {
   document.getElementById('overlay').style.display = 'flex';
   timeout = setTimeout(() => {
     document.getElementById('overlay').style.display = 'none';
+    document.getElementById("errorText").innerHTML = 'Connection timed out';
     emptyResponse();
     xhttp.abort();
   }, 20000);;
@@ -91,6 +92,7 @@ function loadInfo(lon, lat) {
       pokemon = JSON.parse(res.resPokemon.text);
 
       if (res.resWeather.status != 200) {
+        document.getElementById("errorText").innerHTML = 'Location not found';
         emptyResponse();
       } else {
         pokemonList.push(pokemon);
