@@ -12,6 +12,8 @@ var urlsToCache = [
     '/assets/font/pokemon_pixel_font.ttf',
     '/assets/img/bg.png',
     '/assets/img/logo.png',
+    '/assets/img/icon1.png',
+    '/assets/img/icon2.png',
     '/assets/img/types/bug.png',
     '/assets/img/types/dark.png',
     '/assets/img/types/dragon.png',
