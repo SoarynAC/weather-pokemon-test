@@ -4,7 +4,7 @@ module.exports = function (app) {
 
     app.get('/', function (req, res) {
         res.sendFile(__dirname + '/view/index.html')
-    });
+    })
 
     app.get('/buscar', function (req, res) {
         response = {
@@ -22,4 +22,4 @@ module.exports = function (app) {
 
     })
 
-};
+}

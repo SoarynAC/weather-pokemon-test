@@ -1,5 +1,5 @@
-pokemons = [];
-pokeId = 0;
+pokemons = []
+pokeId = 0
 
 function addPokeToMap(pokemon, lon, lat) {
 
@@ -15,21 +15,21 @@ function addPokeToMap(pokemon, lon, lat) {
           "type": "Point",
           "coordinates": [lon, lat]
         }
-      });
+      })
   
       map.getSource("pokemons").setData({
         "type": "FeatureCollection",
         "features": pokemons
-      });
+      })
     } else {
       if (!map.hasImage(pokemon.name)) {
-        map.addImage(pokemon.name, image);
+        map.addImage(pokemon.name, image)
       }
   
       pokemons.push({
         "type": "Feature",
         "properties": {
-          "description": "<strong style='text-transform: uppercase; font-size: 18px'>" + pokemon.name + "</strong>",
+          "description": "<strong style='text-transform: uppercase font-size: 18px'>" + pokemon.name + "</strong>",
           "icon": pokemon.name,
           "pokeid": pokeId++
         },
@@ -37,12 +37,12 @@ function addPokeToMap(pokemon, lon, lat) {
           "type": "Point",
           "coordinates": [lon, lat]
         }
-      });
+      })
   
       map.getSource("pokemons").setData({
         "type": "FeatureCollection",
         "features": pokemons
-      });
+      })
     }
 
   })
