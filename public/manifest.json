@@ -11,6 +11,11 @@
         "src": "/assets/img/icon1.png",
         "type": "image/png",
         "sizes": "256x256"
+      },
+      {
+        "src": "/assets/img/icon3.png",
+        "type": "image/png",
+        "sizes": "512x512"
       }
     ],
     "start_url": "/",

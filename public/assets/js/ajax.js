@@ -62,6 +62,7 @@ function loadPoke(id) {
 
   pokemonList[id].types.forEach(function(element) {
     var img = document.createElement("IMG")
+    img.alt = "Type of the pokemon"
     img.src = "/assets/img/types/" + element.type.name + ".png"
     document.getElementById("imgstipo").appendChild(img)
   })

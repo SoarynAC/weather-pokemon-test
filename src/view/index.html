@@ -5,16 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Weather map with Pokémons!">
+  <meta name="theme-color" content="#3D7DCA"/>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="manifest" href="/manifest.json">
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+  <script defer src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
-  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'>
+  <script defer src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'>
   </script>
   <link rel='stylesheet'
     href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css'
     type='text/css' />
-  <script src="https://use.fontawesome.com/releases/v5.8.2/js/all.js">
+  <script async defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js">
   </script>
   <title>Pokémon Weather Map</title>
 </head>
@@ -31,7 +33,7 @@
     </div>
     <div class="info" id="info">
       <div class="logo">
-        <img id="logo" src="assets/img/logo.png">
+        <img id="logo" src="assets/img/logo.png" alt="Pokemon logo">
       </div>
       <div class="box">
         <p>City: <span class="resp" id="cidade">-</span></p>
@@ -42,7 +44,7 @@
         <hr>
         <p>Type of Pokemon that can be found</p>
         <div class="img-tipo">
-          <img id="imgtipo" src="/assets/img/bg.png">
+          <img id="imgtipo" src="/assets/img/bg.png" alt="Image of the type of pokemon that can be found">
         </div>
         <hr>
         <p>Pokemon Example: <span id="pokemon">-</span></p>
@@ -61,7 +63,7 @@
       </div>
       <div class="modal-body">
         <div class="pokeImg">
-          <img id="pokeImg" src="">
+          <img id="pokeImg" src="" alt="Image of the pokemon">
         </div>
         <div class="pokeInfo1">
           <p>HP: <span id="hp">-</span></p>
@@ -122,13 +124,13 @@
     }
   </script>
 
-  <script src="/assets/js/tz.js"></script>
-  <script src="/assets/js/moment.min.js"></script>
-  <script src="/assets/js/moment-timezone-10.min.js"></script>
-  <script src="/assets/js/map.js"></script>
-  <script src="/assets/js/poketomap.js"></script>
-  <script src="/assets/js/ajax.js"></script>
-  <script src="/assets/js/modal.js"></script>
+  <script defer src="/assets/js/tz.js"></script>
+  <script defer src="/assets/js/moment.min.js"></script>
+  <script defer src="/assets/js/moment-timezone-10.min.js"></script>
+  <script defer src="/assets/js/map.js"></script>
+  <script defer src="/assets/js/poketomap.js"></script>
+  <script defer src="/assets/js/ajax.js"></script>
+  <script defer src="/assets/js/modal.js"></script>
 
 </body>
 
