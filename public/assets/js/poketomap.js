@@ -29,7 +29,7 @@ function addPokeToMap(pokemon, lon, lat) {
       pokemons.push({
         "type": "Feature",
         "properties": {
-          "description": "<strong style='text-transform: uppercase font-size: 18px'>" + pokemon.name + "</strong>",
+          "description": "<strong style='text-transform: uppercase; font-size: 18px;'>" + pokemon.name + "</strong>",
           "icon": pokemon.name,
           "pokeid": pokeId++
         },
