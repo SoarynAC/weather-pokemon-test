@@ -51,6 +51,16 @@ self.addEventListener('fetch', function (event) {
                 return response
             }
             return fetch(event.request)
+                .then(response => {
+                    return caches.open(CACHE_NAME)
+                        .then(cache => {
+                            cache.put(event.request.url, response.clone())
+                            return response
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        })
+                })
         })
     )
 })
