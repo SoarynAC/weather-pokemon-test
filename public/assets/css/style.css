@@ -130,10 +130,6 @@ hr {
   z-index: 2;
 }
 
-.mapboxgl-ctrl-logo {
-  display: none !important
-}
-
 #overlay {
   height: 100%;
   width: 100%;
