@@ -51,10 +51,10 @@ function loadPoke(id) {
 
   for (var i = 0; i < 4; i++) {
 
-    var num = Math.floor(Math.random() * pokemonList[id].moves.length)
+    var num = i
 
     var move = document.createElement("DIV")
-    move.innerHTML = pokemonList[id].moves[num].move.name
+    move.innerHTML = pokemonList[id].moves[num].name
     move.classList.add('move')
 
     document.getElementById('moves').appendChild(move)

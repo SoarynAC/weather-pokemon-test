@@ -19,6 +19,22 @@ module.exports = async function (list) {
 
     } while (pokemon.body.id > 721)
 
+    var nums = []
+    var moves = []
+
+    for (var i = 0; i < 4; i++) {
+
+        do {
+            num = Math.floor(Math.random() * pokemon.body.moves.length)
+        } while (nums.includes(num))
+
+        nums.push(num)
+
+        moves.push({
+            "name": pokemon.body.moves[num].move.name
+        })
+    }
+
     pokemon = {
         "height": pokemon.body.height,
         "weight": pokemon.body.weight,
@@ -26,7 +42,7 @@ module.exports = async function (list) {
         "types": pokemon.body.types,
         "stats": pokemon.body.stats,
         "sprite": pokemon.body.sprites.front_default,
-        "moves": pokemon.body.moves
+        "moves": moves
     }
 
     return pokemon
