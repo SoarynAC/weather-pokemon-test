@@ -3,7 +3,6 @@ var resultados = require('./controller/weather')
 module.exports = function (app) {
 
     app.get('/', function (req, res) {
-        res.setHeader('Cache-Control', 'max-age=0');
         res.sendFile(__dirname + '/view/index.html')
     })
 
