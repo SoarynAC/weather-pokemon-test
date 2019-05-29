@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poke-cache-v4'
+const CACHE_NAME = 'poke-cache-v6'
 var urlsToCache = [
     '/assets/css/style.css',
     '/assets/js/ajax.js',
