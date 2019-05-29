@@ -3,17 +3,12 @@
     "name": "Pokémon Weather Map",
     "icons": [
       {
-        "src": "/assets/img/icon2.png",
-        "type": "image/png",
-        "sizes": "144x144"
-      },
-      {
         "src": "/assets/img/icon1.png",
         "type": "image/png",
         "sizes": "256x256"
       },
       {
-        "src": "/assets/img/icon3.png",
+        "src": "/assets/img/icon2.png",
         "type": "image/png",
         "sizes": "512x512"
       }
